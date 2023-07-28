@@ -25,26 +25,21 @@ const Content = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 60px;
-  max-width: ${({ theme }) => theme.breakpoints.xs}px;
+  max-width: 100%;
   width: 100%;
+  padding: 0 ${({ theme }) => theme.spacing(4)};
   margin: 0 auto;
-  padding: 0 ${({ theme }) => theme.spacing(3)};
 
   ${({ theme }) => theme.breakpoints.up("sm")} {
-    max-width: 540px;
-    padding: 0 0;
+    max-width: 100%;
   }
+
   ${({ theme }) => theme.breakpoints.up("md")} {
-    max-width: 720px;
-    padding: 0 0;
-  }
-  ${({ theme }) => theme.breakpoints.up("lg")} {
     max-width: 960px;
-    padding: 0 0;
   }
-  ${({ theme }) => theme.breakpoints.up("xl")} {
-    max-width: 1440px;
-    padding: 0 80px;
+
+  ${({ theme }) => theme.breakpoints.up("lg")} {
+    max-width: 1144px;
   }
 `;
 

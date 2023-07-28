@@ -4,7 +4,7 @@ export const typography = {
   fontSizeMd: "16px",
   fontSizeLg: "18px",
   fontSizeXl: "20px",
-  fontWeightLight: 300,
+  fontWeightLight: 400,
   fontWeightRegular: 600,
-  fontWeightBold: 800,
+  fontWeightBold: 700,
 };

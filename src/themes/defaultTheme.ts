@@ -4,7 +4,12 @@ import { shadows } from "./shadows";
 import { typography } from "./typography";
 import { breakpoints } from "./breakpoints";
 import { lightPalette } from "./lightPalette";
+import { transitions } from "./transitions";
 
+/**
+ * Theme was constructed based on Material-Ui guidelines
+ *  refer https://mui.com/material-ui/customization/default-theme/
+ */
 export const defaultTheme = {
   palette: lightPalette,
   spacing,
@@ -12,4 +17,5 @@ export const defaultTheme = {
   shadows,
   typography,
   breakpoints,
+  transitions,
 };
