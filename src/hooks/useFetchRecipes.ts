@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
-import { EntryCollection, EntrySkeletonType } from "contentful";
-import { client } from "utils";
-import { Maybe } from "types";
-import { CONTENT_TYPE } from "globalConstants";
+import { useContentful } from "api";
+import { CONTENTFUL_CONTENT_TYPE } from "globalConstants";
+import { Maybe, RecipesData } from "types";
 // import mockRecipes from "../__fixtures__/mockRecipes.json";
 
-type UseFetchRecipesProps = {
-  data: Maybe<EntryCollection<EntrySkeletonType, undefined, string>>;
+export type UseFetchRecipesProps = {
+  data: Maybe<RecipesData>;
   error: string;
   loading: boolean;
 };
 
 export const useFetchRecipes = (): UseFetchRecipesProps => {
-  const [data, setData] = useState<Maybe<UseFetchRecipesProps["data"]>>(null);
+  const contentfulClient = useContentful();
+  const [data, setData] = useState<Maybe<RecipesData>>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -22,8 +22,8 @@ export const useFetchRecipes = (): UseFetchRecipesProps => {
         setLoading(true);
         setError("");
 
-        const data = await client.getEntries({
-          content_type: CONTENT_TYPE,
+        const data = await contentfulClient.getEntries({
+          content_type: CONTENTFUL_CONTENT_TYPE,
         });
 
         setData(data);
@@ -37,7 +37,7 @@ export const useFetchRecipes = (): UseFetchRecipesProps => {
     };
 
     fetchRecipes();
-  }, []);
+  }, [contentfulClient]);
 
   return { data, error, loading };
 };

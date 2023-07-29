@@ -18,7 +18,7 @@ export const Recipes = () => {
     <RecipesContainer data-testid="recipes">
       <Title data-testid="recipes-title">Select Your Recipes</Title>
       {recipes.length > 0 ? (
-        <RecipesList>
+        <RecipesList data-testid="recipes-list">
           {recipes.map((recipe) => (
             <RecipeItem key={recipe.id} recipe={recipe} />
           ))}

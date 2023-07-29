@@ -1,10 +1,10 @@
 import { useMemo } from "react";
 import { useFetchRecipes } from "hooks";
 import { prepareRecipes } from "./utils";
-import { Recipe } from "types";
+import { RecipeData } from "types";
 
 type UseRecipesProps = {
-  recipes: Recipe[];
+  recipes: RecipeData[];
   error: string;
   loading: boolean;
 };

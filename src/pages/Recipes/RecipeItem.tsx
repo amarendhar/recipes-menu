@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
-import { Recipe } from "types";
+import { RecipeData } from "types";
 
 type RecipeItemProps = {
-  recipe: Recipe;
+  recipe: RecipeData;
 };
 
 export const RecipeItem = ({ recipe }: RecipeItemProps) => {
@@ -12,7 +12,7 @@ export const RecipeItem = ({ recipe }: RecipeItemProps) => {
       <RecipeContainer>
         <RecipeImage>
           <img
-            data-testid="recipe-name"
+            data-testid="recipe-image"
             src={recipe.image}
             alt={recipe.title}
           />

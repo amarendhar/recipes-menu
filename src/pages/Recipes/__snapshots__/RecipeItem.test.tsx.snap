@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`# RecipeItem Should render recipe-item with recipe image and title 1`] = `
+<div>
+  <a
+    class=""
+    data-testid="recipe-item"
+    href="/recipe/4dT8tcb6ukGSIg2YyuGEOm"
+  >
+    <div
+      class="sc-iBkiHk fWLHxM"
+    >
+      <div
+        class="sc-ftvSNZ jCUnlN"
+      >
+        <img
+          alt="White Cheddar Grilled Cheese with Cherry Preserves & Basil"
+          data-testid="recipe-image"
+          src="//images.ctfassets.net/kk2bw5ojx476/61XHcqOBFYAYCGsKugoMYK/0009ec560684b37f7f7abadd66680179/SKU1240_hero-374f8cece3c71f5fcdc939039e00fb96.jpg"
+        />
+      </div>
+      <div
+        class="sc-paqrt bkQlYK"
+      >
+        <div
+          class="sc-jqUWZQ jgeMNf"
+          data-testid="recipe-name"
+        >
+          White Cheddar Grilled Cheese with Cherry Preserves & Basil
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
+`;

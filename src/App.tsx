@@ -1,18 +1,21 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { ContentfulProvider } from "api";
 import { Layout } from "containers";
 import { Recipes, Recipe, NotFound } from "pages";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Recipes />} />
-          <Route path="/recipe/:id" element={<Recipe />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <ContentfulProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Recipes />} />
+            <Route path="/recipe/:id" element={<Recipe />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ContentfulProvider>
   );
 };
 
