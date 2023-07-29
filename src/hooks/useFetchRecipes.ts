@@ -27,7 +27,7 @@ export const useFetchRecipes = (): UseFetchRecipesProps => {
         });
 
         setData(data);
-        // setData(mockRecipes);
+        // setData(mockRecipes as RecipesData);
         setLoading(false);
       } catch (error) {
         setData(null);

@@ -1,15 +1,15 @@
 import { NavLink } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
-import { RecipeData } from "types";
+import { RecipeListItem } from "types";
 
 type RecipeItemProps = {
-  recipe: RecipeData;
+  recipe: RecipeListItem;
 };
 
 export const RecipeItem = ({ recipe }: RecipeItemProps) => {
   return (
     <NavLink data-testid="recipe-item" to={`/recipe/${recipe.id}`}>
-      <RecipeContainer>
+      <RecipeItemContainer>
         <RecipeImage>
           <img
             data-testid="recipe-image"
@@ -20,7 +20,7 @@ export const RecipeItem = ({ recipe }: RecipeItemProps) => {
         <RecipeDetails>
           <RecipeName data-testid="recipe-name">{recipe.title}</RecipeName>
         </RecipeDetails>
-      </RecipeContainer>
+      </RecipeItemContainer>
     </NavLink>
   );
 };
@@ -34,7 +34,7 @@ const fadeIn = keyframes`
   }
 `;
 
-const RecipeContainer = styled.div`
+const RecipeItemContainer = styled.div`
   border-radius: ${({ theme }) => theme.shape.borderRadius};
   background-color: ${({ theme }) => theme.palette.primary.main};
   box-shadow: ${({ theme }) => theme.shadows[2]};

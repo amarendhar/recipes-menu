@@ -13,7 +13,7 @@ describe("# prepareRepository", () => {
         image: expect.any(String),
         tags: expect.any(Array<String>),
         description: expect.any(String),
-        chefName: expect.any(String),
+        chef: expect.any(String),
       });
     });
 

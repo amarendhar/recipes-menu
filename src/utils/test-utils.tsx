@@ -43,7 +43,7 @@ const renderHook = (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={children} />
-          <Route path="/recipe/:id" element={children} />
+          <Route path="/recipe/:recipeId" element={children} />
         </Routes>
       </BrowserRouter>
     </ContentfulProvider>

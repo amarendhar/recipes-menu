@@ -18,4 +18,11 @@ export const lightPalette = {
     300: "#c6c6c6",
     500: "hsl(0, 0%, 52%)",
   },
+  markdown: {
+    link: {
+      main: "hsl(240deg 100% 50%)",
+      dark: "hsl(240deg 100% 30%);",
+      light: "hsl(240deg 100% 70%);",
+    },
+  },
 };
