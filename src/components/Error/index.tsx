@@ -16,11 +16,21 @@ export const Error = ({
       data-testid={restProps["data-testid"] || "error"}
       $size={size || 5}
     >
-      {children}
+      <h2>Something went wrong, please try refresh the page</h2>
+      <Text>{children}</Text>
     </Container>
   );
 };
 
 const Container = styled.div<{ $size: number }>`
-  padding: ${({ theme, $size }) => theme.spacing($size)};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-gap: ${({ theme }) => theme.spacing(3)};
+  padding: ${({ theme }) => theme.spacing(5)};
+  font-size: ${({ theme }) => theme.typography.fontSizeXl};
+`;
+
+const Text = styled.div`
+  color: ${({ theme }) => theme.palette.error.main};
 `;

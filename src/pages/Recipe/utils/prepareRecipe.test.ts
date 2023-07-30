@@ -1,10 +1,10 @@
 import { prepareRecipe } from "./prepareRecipe";
-import { RecipeData } from "types";
+import { RecipeEntry } from "types";
 import mockRecipes from "mocks/__fixtures__/mockRecipes.json";
 
 describe("# prepareRecipe", () => {
   it("Should return prepared recipe", () => {
-    const recipe = prepareRecipe(mockRecipes.items[3] as RecipeData);
+    const recipe = prepareRecipe(mockRecipes.items[3] as RecipeEntry);
 
     expect(recipe).toEqual({
       id: expect.any(String),

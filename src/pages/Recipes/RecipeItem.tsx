@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
-import { RecipeListItem } from "types";
+import { RecipesItemData } from "types";
 
 type RecipeItemProps = {
-  recipe: RecipeListItem;
+  recipe: RecipesItemData;
 };
 
 export const RecipeItem = ({ recipe }: RecipeItemProps) => {

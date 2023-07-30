@@ -1,13 +1,13 @@
 import { render, screen } from "utils/test-utils";
 import { RecipeItem } from "./RecipeItem";
 import { prepareRecipes } from "./utils";
-import { RecipeListItem, RecipesData } from "types";
+import { RecipesItemData, RecipesEntry } from "types";
 import mockRecipes from "mocks/__fixtures__/mockRecipes.json";
 
 describe("# RecipeItem", () => {
-  const recipes = prepareRecipes(mockRecipes as RecipesData);
+  const recipes = prepareRecipes(mockRecipes as RecipesEntry);
 
-  const renderComponent = (recipe: RecipeListItem) =>
+  const renderComponent = (recipe: RecipesItemData) =>
     render(<RecipeItem recipe={recipe} />, { route: null });
 
   it("Should render recipe-item with recipe image and title", async () => {

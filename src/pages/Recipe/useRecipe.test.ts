@@ -2,7 +2,7 @@ import { waitFor, renderHook } from "utils/test-utils";
 import { useRecipe } from "./useRecipe";
 import * as prepareRecipeUtils from "./utils/prepareRecipe";
 import { prepareRecipe } from "./utils";
-import { RecipeData } from "types";
+import { RecipeEntry } from "types";
 import mockRecipes from "mocks/__fixtures__/mockRecipes.json";
 
 describe("# useRecipe", () => {
@@ -13,7 +13,7 @@ describe("# useRecipe", () => {
   };
 
   it("Should return loading state true, when fetching recipe", async () => {
-    const recipe = prepareRecipe(mockRecipes.items[0] as RecipeData);
+    const recipe = prepareRecipe(mockRecipes.items[0] as RecipeEntry);
     const { result } = renderHook(() => useRecipe(), {
       route: `/recipe/${recipe?.id}`,
     });
@@ -25,7 +25,7 @@ describe("# useRecipe", () => {
   });
 
   it("Should fetch the recipe", async () => {
-    const recipe = prepareRecipe(mockRecipes.items[1] as RecipeData);
+    const recipe = prepareRecipe(mockRecipes.items[1] as RecipeEntry);
     const { result } = renderHook(() => useRecipe(), {
       route: `/recipe/${recipe?.id}`,
     });
@@ -39,7 +39,7 @@ describe("# useRecipe", () => {
   });
 
   it("Should prepare recipe, when data is available", async () => {
-    const recipe = prepareRecipe(mockRecipes.items[2] as RecipeData);
+    const recipe = prepareRecipe(mockRecipes.items[2] as RecipeEntry);
     const prepareRecipeSpy = jest.spyOn(prepareRecipeUtils, "prepareRecipe");
     const { result } = renderHook(() => useRecipe(), {
       route: `/recipe/${recipe?.id}`,

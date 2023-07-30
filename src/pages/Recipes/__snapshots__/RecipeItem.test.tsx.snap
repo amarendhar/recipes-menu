@@ -8,10 +8,10 @@ exports[`# RecipeItem Should render recipe-item with recipe image and title 1`] 
     href="/recipe/4dT8tcb6ukGSIg2YyuGEOm"
   >
     <div
-      class="sc-fEOqom jfgwpl"
+      class="sc-dIowON dnuTcK"
     >
       <div
-        class="sc-bjUoET iTaaTp"
+        class="sc-hHLcUO gTprxP"
       >
         <img
           alt="White Cheddar Grilled Cheese with Cherry Preserves & Basil"
@@ -20,10 +20,10 @@ exports[`# RecipeItem Should render recipe-item with recipe image and title 1`] 
         />
       </div>
       <div
-        class="sc-idiyyg hQHMjf"
+        class="sc-dmRblv gzITwX"
       >
         <div
-          class="sc-dIowON lmIpLJ"
+          class="sc-kgfleI gqAAJn"
           data-testid="recipe-name"
         >
           White Cheddar Grilled Cheese with Cherry Preserves & Basil

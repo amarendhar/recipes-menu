@@ -1,20 +1,23 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useContentful } from "api";
-import { CONTENTFUL_CONTENT_TYPE } from "globalConstants";
-import { Maybe, RecipesData } from "types";
-// import mockRecipes from "mocks/__fixtures__/mockRecipes.json";
+import { RECIPES_LIMIT, CONTENTFUL_CONTENT_TYPE } from "globalConstants";
+import { Maybe, RecipesEntry } from "types";
+import mockRecipes from "mocks/__fixtures__/mockRecipes.json";
 
 export type UseFetchRecipesProps = {
-  data: Maybe<RecipesData>;
+  data: Maybe<RecipesEntry>;
   error: string;
   loading: boolean;
+  cursor: number;
+  loadMore: () => void;
 };
 
-export const useFetchRecipes = (): UseFetchRecipesProps => {
+export const useFetchRecipes = (limit?: number): UseFetchRecipesProps => {
   const contentfulClient = useContentful();
-  const [data, setData] = useState<Maybe<RecipesData>>(null);
+  const [data, setData] = useState<Maybe<RecipesEntry>>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState<boolean>(true);
+  const [cursor, setCursor] = useState<number>(0);
 
   useEffect(() => {
     const fetchRecipes = async () => {
@@ -24,12 +27,25 @@ export const useFetchRecipes = (): UseFetchRecipesProps => {
 
         const data = await contentfulClient.getEntries({
           content_type: CONTENTFUL_CONTENT_TYPE,
+          skip: cursor,
+          limit: RECIPES_LIMIT,
         });
 
         setData(data);
-        // setData(mockRecipes as RecipesData);
+        // setData({
+        //   ...(mockRecipes as RecipesEntry),
+        //   // @ts-ignore
+        //   items: mockRecipes.items.map((mockRecipe) => ({
+        //     ...mockRecipe,
+        //     sys: {
+        //       ...mockRecipe.sys,
+        //       id: mockRecipe.sys.id + cursor,
+        //     },
+        //   })),
+        // });
         setLoading(false);
       } catch (error) {
+        console.error("Error in fetching recipes -> ", error);
         setData(null);
         setError(String(error));
         setLoading(false);
@@ -37,7 +53,20 @@ export const useFetchRecipes = (): UseFetchRecipesProps => {
     };
 
     fetchRecipes();
-  }, [contentfulClient]);
+  }, [contentfulClient, cursor]);
 
-  return { data, error, loading };
+  const loadMore = useCallback(() => {
+    if (!data?.total) {
+      return;
+    }
+
+    const newCursor = cursor + RECIPES_LIMIT;
+    const hasMoreRecipes = newCursor < data.total;
+
+    if (hasMoreRecipes && !loading) {
+      setCursor(newCursor);
+    }
+  }, [data?.total, cursor, loading]);
+
+  return { data, error, loading, cursor, loadMore };
 };

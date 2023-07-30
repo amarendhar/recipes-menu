@@ -14,8 +14,10 @@ export const Header = () => {
 };
 
 const HeaderContainer = styled.header`
-  background-color: ${({ theme }) => theme.palette.primary.main};
+  position: sticky;
+  top: 0;
   color: ${({ theme }) => theme.palette.primary.contrastText};
+  background-color: ${({ theme }) => theme.palette.primary.main};
   box-shadow: ${({ theme }) => theme.shadows[2]};
   z-index: 99;
 `;

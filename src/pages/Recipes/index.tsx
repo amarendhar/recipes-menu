@@ -1,10 +1,26 @@
+import { useRef } from "react";
 import styled from "styled-components";
 import { Error, Loading } from "components";
 import { useRecipes } from "./useRecipes";
 import { RecipeItem } from "./RecipeItem";
+import { useOnscroll } from "hooks";
 
 export const Recipes = () => {
-  const { recipes, error, loading } = useRecipes();
+  const { recipes, error, loading, loadMore } = useRecipes();
+  const recipesListRef = useRef<HTMLDivElement | null>(null);
+
+  useOnscroll(() => {
+    if (!recipesListRef.current) {
+      return;
+    }
+
+    if (
+      recipesListRef.current.scrollHeight - recipesListRef.current.scrollTop ===
+      recipesListRef.current.clientHeight
+    ) {
+      loadMore();
+    }
+  });
 
   if (loading) {
     return <Loading data-testid="recipes-loading" />;
@@ -18,7 +34,7 @@ export const Recipes = () => {
     <RecipesContainer data-testid="recipes-container">
       <Title data-testid="recipes-title">Select Your Recipes</Title>
       {recipes.length > 0 ? (
-        <RecipesList data-testid="recipes-list">
+        <RecipesList data-testid="recipes-list" ref={recipesListRef}>
           {recipes.map((recipe) => (
             <RecipeItem key={recipe.id} recipe={recipe} />
           ))}

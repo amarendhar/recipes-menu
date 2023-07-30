@@ -3,7 +3,7 @@
 exports[`# Recipe Should fetch and render recipe with details image, title, description, tags and chef 1`] = `
 <div>
   <header
-    class="sc-bczSft iRgQoa"
+    class="sc-bczSft fMDLdz"
   >
     <div
       class="sc-gsnScm gKnCNt"
@@ -22,15 +22,15 @@ exports[`# Recipe Should fetch and render recipe with details image, title, desc
     class="sc-hKMtDE keuPlN"
   >
     <div
-      class="sc-ftvSNZ cNEgUJ"
+      class="sc-kDDqET cFtpDF"
       data-testid="recipe-container"
     >
       <div
-        class="sc-paqrt ghgffe"
+        class="sc-iqcnOu gWJjuX"
         data-testid="recipe-content"
       >
         <div
-          class="sc-jqUWZQ jkOAMd"
+          class="sc-crXcXV imUHhX"
         >
           <img
             alt="Crispy Chicken and Rice	with Peas & Arugula Salad"
@@ -39,16 +39,16 @@ exports[`# Recipe Should fetch and render recipe with details image, title, desc
           />
         </div>
         <div
-          class="sc-kDDqET bOCbPU"
+          class="sc-ewahw goharH"
         >
           <h1
-            class="sc-iqcnOu frMNUQ"
+            class="sc-bretMz iVBnMd"
             data-testid="recipe-title"
           >
             Crispy Chicken and Rice	with Peas & Arugula Salad
           </h1>
           <div
-            class="sc-crXcXV gXqTwt"
+            class="sc-ksZauW cxLiLA"
             data-testid="recipe-description"
           >
             <span
@@ -59,16 +59,16 @@ exports[`# Recipe Should fetch and render recipe with details image, title, desc
             </span>
           </div>
           <div
-            class="sc-bretMz keDIXw"
+            class="sc-fnymgw eIpLnC"
             data-testid="recipe-tags-container"
           >
             <span
-              class="sc-ewahw kEhVVZ"
+              class="sc-hAZoWV iCFmIw"
             >
               Tags:
             </span>
             <div
-              class="sc-ksZauW Jqoyc"
+              class="sc-fEOqom jFifry"
               data-testid="recipe-tags"
             >
               <div
@@ -84,11 +84,11 @@ exports[`# Recipe Should fetch and render recipe with details image, title, desc
             </div>
           </div>
           <div
-            class="sc-hAZoWV geqfgz"
+            class="sc-bjUoET bmjKUN"
             data-testid="recipe-chef"
           >
             <span
-              class="sc-ewahw kEhVVZ"
+              class="sc-hAZoWV iCFmIw"
             >
               Chef:
             </span>

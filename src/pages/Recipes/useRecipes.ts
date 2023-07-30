@@ -1,20 +1,24 @@
-import { useMemo } from "react";
+import { useState, useEffect } from "react";
 import { useFetchRecipes } from "hooks";
 import { prepareRecipes } from "./utils";
-import { RecipeListItem } from "types";
+import { RecipesItemData } from "types";
 
 type UseRecipesProps = {
-  recipes: RecipeListItem[];
+  recipes: RecipesItemData[];
   error: string;
   loading: boolean;
+  loadMore: () => void;
 };
 
-export const useRecipes = (): UseRecipesProps => {
-  const { data, error, loading } = useFetchRecipes();
+export const useRecipes = (limit?: number): UseRecipesProps => {
+  const { data, error, loading, loadMore } = useFetchRecipes(limit);
+  const [recipes, setRecipes] = useState<RecipesItemData[]>([]);
 
-  const recipes = useMemo(() => {
-    return prepareRecipes(data);
+  useEffect(() => {
+    const newRecipes = prepareRecipes(data);
+
+    setRecipes((prevRecipes) => [...prevRecipes, ...newRecipes]);
   }, [data]);
 
-  return { recipes, error, loading };
+  return { recipes, error, loading, loadMore };
 };

@@ -1,12 +1,19 @@
-import { act, render, screen, within, waitFor } from "utils/test-utils";
+import {
+  act,
+  render,
+  screen,
+  within,
+  waitFor,
+  fireEvent,
+} from "utils/test-utils";
 import { Recipes } from ".";
 import * as RecipeItem from "./RecipeItem";
 import { prepareRecipes } from "./utils";
-import { RecipesData } from "types";
+import { RecipesEntry } from "types";
 import mockRecipes from "mocks/__fixtures__/mockRecipes.json";
 
 describe("# Recipes", () => {
-  const recipes = prepareRecipes(mockRecipes as RecipesData);
+  const recipes = prepareRecipes(mockRecipes as RecipesEntry);
 
   const renderComponent = ({ route = "/" } = {}) =>
     render(<Recipes />, { route });

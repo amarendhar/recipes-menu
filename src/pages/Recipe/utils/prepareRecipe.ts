@@ -1,5 +1,5 @@
 import { EntryFields, EntrySkeletonType } from "contentful";
-import { Maybe, RecipeData, RecipeListItem } from "types";
+import { Maybe, RecipeEntry, RecipeData } from "types";
 
 type RecipeFields = {
   title: EntryFields.Text;
@@ -9,9 +9,7 @@ type RecipeFields = {
   chef: EntryFields.EntryLink<EntrySkeletonType>;
 };
 
-export const prepareRecipe = (
-  data: Maybe<RecipeData>
-): Maybe<RecipeListItem> => {
+export const prepareRecipe = (data: Maybe<RecipeEntry>): Maybe<RecipeData> => {
   if (!data) {
     return null;
   }
@@ -26,7 +24,7 @@ export const prepareRecipe = (
   const description = fields?.description || "";
   const chef = (fields?.chef?.fields?.name || "") as string;
 
-  const recipeData: RecipeListItem = {
+  const recipeData: RecipeData = {
     id,
     title,
     image,

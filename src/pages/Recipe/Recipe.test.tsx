@@ -3,7 +3,7 @@ import { render as rtlRender } from "@testing-library/react";
 import { compiler } from "markdown-to-jsx";
 import { Recipe } from ".";
 import { prepareRecipe } from "./utils";
-import { RecipeData } from "types";
+import { RecipeEntry } from "types";
 import mockRecipes from "mocks/__fixtures__/mockRecipes.json";
 
 describe("# Recipe", () => {
@@ -20,7 +20,7 @@ describe("# Recipe", () => {
   });
 
   it("Should fetch and render recipe with details image, title, description, tags and chef", async () => {
-    const recipe = prepareRecipe(mockRecipes.items[3] as RecipeData);
+    const recipe = prepareRecipe(mockRecipes.items[3] as RecipeEntry);
     const { container } = renderComponent({
       route: `/recipe/${recipe?.id}`,
     });
