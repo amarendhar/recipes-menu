@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import { useContentful } from "api";
 import { Maybe, RecipeData } from "types";
-import mockRecipe from "../__fixtures__/mockRecipe.json";
+import mockRecipe from "mocks/__fixtures__/mockRecipe.json";
 
 type UseFetchRecipeProps = {
   data: Maybe<RecipeData>;
@@ -10,9 +9,8 @@ type UseFetchRecipeProps = {
   loading: boolean;
 };
 
-export const useFetchRecipe = (): UseFetchRecipeProps => {
+export const useFetchRecipe = (recipeId?: string): UseFetchRecipeProps => {
   const contentfulClient = useContentful();
-  const { recipeId } = useParams<{ recipeId: string }>();
   const [data, setData] = useState<Maybe<RecipeData>>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -32,6 +30,7 @@ export const useFetchRecipe = (): UseFetchRecipeProps => {
         // setData(mockRecipe as RecipeData);
         setLoading(false);
       } catch (error) {
+        console.log("Error -> ", error);
         setData(null);
         setError(String(error));
         setLoading(false);

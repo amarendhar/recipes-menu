@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useContentful } from "api";
 import { CONTENTFUL_CONTENT_TYPE } from "globalConstants";
 import { Maybe, RecipesData } from "types";
-// import mockRecipes from "../__fixtures__/mockRecipes.json";
+// import mockRecipes from "mocks/__fixtures__/mockRecipes.json";
 
 export type UseFetchRecipesProps = {
   data: Maybe<RecipesData>;

@@ -1,9 +1,9 @@
 import { prepareRecipes } from "./prepareRecipes";
 import { RecipesData } from "types";
-import mockRecipes from "../../../__fixtures__/mockRecipes.json";
+import mockRecipes from "mocks/__fixtures__/mockRecipes.json";
 
 describe("# prepareRepository", () => {
-  it("Should return prepared repository", () => {
+  it("Should return prepared recipes", () => {
     const recipes = prepareRecipes(mockRecipes as RecipesData);
 
     recipes.forEach((recipe) => {

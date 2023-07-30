@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`# prepareRepository Should return prepared repository 1`] = `
+exports[`# prepareRepository Should return prepared recipes 1`] = `
 Array [
   Object {
     "chef": "",

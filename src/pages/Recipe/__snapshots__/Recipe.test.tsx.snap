@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`# Recipe Should fetch and render recipe with details image, title, description, tags and chef 1`] = `
+<div>
+  <header
+    class="sc-bczSft iRgQoa"
+  >
+    <div
+      class="sc-gsnScm gKnCNt"
+    >
+      <a
+        class="sc-dkzCjb jEMETj"
+        href="/"
+      >
+        <h2>
+          Recipes Menu
+        </h2>
+      </a>
+    </div>
+  </header>
+  <main
+    class="sc-hKMtDE keuPlN"
+  >
+    <div
+      class="sc-ftvSNZ cNEgUJ"
+      data-testid="recipe-container"
+    >
+      <div
+        class="sc-paqrt ghgffe"
+        data-testid="recipe-content"
+      >
+        <div
+          class="sc-jqUWZQ jkOAMd"
+        >
+          <img
+            alt="Crispy Chicken and Rice	with Peas & Arugula Salad"
+            data-testid="recipe-image"
+            src="//images.ctfassets.net/kk2bw5ojx476/5mFyTozvSoyE0Mqseoos86/fb88f4302cfd184492e548cde11a2555/SKU1479_Hero_077-71d8a07ff8e79abcb0e6c0ebf0f3b69c.jpg"
+          />
+        </div>
+        <div
+          class="sc-kDDqET bOCbPU"
+        >
+          <h1
+            class="sc-iqcnOu frMNUQ"
+            data-testid="recipe-title"
+          >
+            Crispy Chicken and Rice	with Peas & Arugula Salad
+          </h1>
+          <div
+            class="sc-crXcXV gXqTwt"
+            data-testid="recipe-description"
+          >
+            <span
+              class="markdown"
+              data-testid="markdown"
+            >
+              Crispy chicken skin, tender meat, and rich, tomatoey sauce form a winning trifecta of delicious in this one-pot braise. We spoon it over rice and peas to soak up every last drop of goodness, and serve a tangy arugula salad alongside for a vibrant boost of flavor and color. Dinner is served! Cook, relax, and enjoy!
+            </span>
+          </div>
+          <div
+            class="sc-bretMz keDIXw"
+            data-testid="recipe-tags-container"
+          >
+            <span
+              class="sc-ewahw kEhVVZ"
+            >
+              Tags:
+            </span>
+            <div
+              class="sc-ksZauW Jqoyc"
+              data-testid="recipe-tags"
+            >
+              <div
+                data-testid="recipe-tag"
+              >
+                gluten free
+              </div>
+              <div
+                data-testid="recipe-tag"
+              >
+                healthy
+              </div>
+            </div>
+          </div>
+          <div
+            class="sc-hAZoWV geqfgz"
+            data-testid="recipe-chef"
+          >
+            <span
+              class="sc-ewahw kEhVVZ"
+            >
+              Chef:
+            </span>
+            <span>
+              Jony Chives
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+`;

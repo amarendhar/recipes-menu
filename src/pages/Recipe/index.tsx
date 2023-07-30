@@ -6,17 +6,17 @@ export const Recipe = () => {
   const { recipe, error, loading } = useRecipe();
 
   if (loading) {
-    return <Loading data-testid="recipes-loading" />;
+    return <Loading data-testid="recipe-loading" />;
   }
 
   if (error) {
-    return <Error data-testid="recipes-error">{error}</Error>;
+    return <Error data-testid="recipe-error">{error}</Error>;
   }
 
   return (
-    <RecipeContainer>
+    <RecipeContainer data-testid="recipe-container">
       {recipe ? (
-        <RecipeContent>
+        <RecipeContent data-testid="recipe-content">
           <RecipeImage>
             <img
               data-testid="recipe-image"
@@ -30,17 +30,19 @@ export const Recipe = () => {
               <Markdown>{recipe.description}</Markdown>
             </Description>
             {recipe.tags.length > 0 && (
-              <TagsContainer>
+              <TagsContainer data-testid="recipe-tags-container">
                 <Label>Tags:</Label>
-                <Tags>
+                <Tags data-testid="recipe-tags">
                   {recipe.tags.map((tag) => (
-                    <div key={tag}>{tag}</div>
+                    <div data-testid="recipe-tag" key={tag}>
+                      {tag}
+                    </div>
                   ))}
                 </Tags>
               </TagsContainer>
             )}
             {recipe.chef && (
-              <Chef>
+              <Chef data-testid="recipe-chef">
                 <Label>Chef:</Label>
                 <span>{recipe.chef}</span>
               </Chef>
@@ -48,7 +50,7 @@ export const Recipe = () => {
           </Details>
         </RecipeContent>
       ) : (
-        <NoResults data-testid="recipes-not-found">
+        <NoResults data-testid="recipe-not-found">
           Recipe not available at the moment, please try again later
         </NoResults>
       )}

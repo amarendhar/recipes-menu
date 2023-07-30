@@ -1,16 +1,17 @@
 import { waitFor, renderHook } from "utils/test-utils";
-import { useFetchRecipes } from "./useFetchRecipes";
+import { useFetchRecipe } from "./useFetchRecipe";
 import mockRecipes from "mocks/__fixtures__/mockRecipes.json";
 
-describe("# useFetchRecipes", () => {
+describe("# useFetchRecipe", () => {
   const initialValues = {
     data: null,
     error: "",
     loading: false,
   };
 
-  it("Should return loading state, when fetching recipes-list", async () => {
-    const { result } = renderHook(() => useFetchRecipes());
+  const mockRecipe = mockRecipes.items[0];
+  it("Should return loading state, when fetching recipe", async () => {
+    const { result } = renderHook(() => useFetchRecipe(mockRecipe.sys.id));
 
     expect(result.current).toEqual({
       ...initialValues,
@@ -18,14 +19,14 @@ describe("# useFetchRecipes", () => {
     });
   });
 
-  it("Should fetch recipes-list", async () => {
-    const { result } = renderHook(() => useFetchRecipes());
+  it("Should fetch recipe", async () => {
+    const { result } = renderHook(() => useFetchRecipe(mockRecipe.sys.id));
 
     await waitFor(() => expect(result.current.loading).toEqual(false));
 
     expect(result.current).toEqual({
       ...initialValues,
-      data: mockRecipes,
+      data: mockRecipe,
     });
   });
 });

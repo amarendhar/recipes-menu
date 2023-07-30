@@ -15,7 +15,7 @@ export const Recipes = () => {
   }
 
   return (
-    <RecipesContainer data-testid="recipes">
+    <RecipesContainer data-testid="recipes-container">
       <Title data-testid="recipes-title">Select Your Recipes</Title>
       {recipes.length > 0 ? (
         <RecipesList data-testid="recipes-list">

@@ -2,7 +2,7 @@ import { render, screen } from "utils/test-utils";
 import { RecipeItem } from "./RecipeItem";
 import { prepareRecipes } from "./utils";
 import { RecipeListItem, RecipesData } from "types";
-import mockRecipes from "../../__fixtures__/mockRecipes.json";
+import mockRecipes from "mocks/__fixtures__/mockRecipes.json";
 
 describe("# RecipeItem", () => {
   const recipes = prepareRecipes(mockRecipes as RecipesData);

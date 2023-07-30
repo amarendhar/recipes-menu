@@ -3,7 +3,7 @@ import { useRecipes } from "./useRecipes";
 import * as prepareRecipesUtils from "./utils/prepareRecipes";
 import { prepareRecipes } from "./utils";
 import { RecipesData } from "types";
-import mockRecipes from "../../__fixtures__/mockRecipes.json";
+import mockRecipes from "mocks/__fixtures__/mockRecipes.json";
 
 describe("# useRecipes", () => {
   const initialValues = {

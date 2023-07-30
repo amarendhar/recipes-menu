@@ -4,18 +4,35 @@ import {
   CONTENTFUL_SPACE_ID,
   CONTENTFUL_ENVIRONMENT_ID,
 } from "globalConstants";
-import mockRecipes from "../__fixtures__/mockRecipes.json";
+import mockRecipes from "mocks/__fixtures__/mockRecipes.json";
 
 const BASE_URL = `${CONTENTFUL_BASE_URL}/spaces/${CONTENTFUL_SPACE_ID}`;
+const DELAY = 150;
 
 export const handlers = [
   rest.get(`${BASE_URL}/entries`, (req, res, ctx) => {
-    return res(ctx.json(mockRecipes), ctx.delay(150));
+    return res(ctx.json(mockRecipes), ctx.delay(DELAY));
   }),
   rest.get(
     `${BASE_URL}/environments/${CONTENTFUL_ENVIRONMENT_ID}/entries`,
     (req, res, ctx) => {
-      return res(ctx.json(mockRecipes), ctx.delay(150));
+      const entryId = req.url.searchParams.get("sys.id");
+
+      if (entryId) {
+        const entry = mockRecipes.items.find((item) => item.sys.id === entryId);
+
+        return entry
+          ? res(
+              ctx.json({
+                ...mockRecipes,
+                items: [entry],
+              }),
+              ctx.delay(DELAY)
+            )
+          : res(ctx.status(404), ctx.delay(DELAY));
+      }
+
+      return res(ctx.json(mockRecipes), ctx.delay(DELAY));
     }
   ),
 ];
