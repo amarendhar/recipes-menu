@@ -155,12 +155,12 @@ The detailed view displays all the data for a selected recipe, including the tit
 
 ## Recipes-Page
 
-![Recipes-Page large-screen](https://drive.google.com/file/d/1hz8u8D_C74nnkcFqvQfy72XLRQzP39J_/view?usp=sharing)
-![Recipes-Page medium-screen](https://drive.google.com/file/d/12BXKIwlS3qkqHCoZhCEUpk2qLF2Yprpy/view?usp=sharing)
-![Recipes-Page small-screen](https://drive.google.com/file/d/1DItlRSmPlKM8rdXyCKEZZq-rfXHLIlSi/view?usp=sharing)
+![Recipes-Page large-screen](https://drive.google.com/uc?export=view&id=1hz8u8D_C74nnkcFqvQfy72XLRQzP39J_)
+![Recipes-Page medium-screen](https://drive.google.com/uc?export=view&id=12BXKIwlS3qkqHCoZhCEUpk2qLF2Yprpy)
+![Recipes-Page small-screen](https://drive.google.com/uc?export=view&id=1DItlRSmPlKM8rdXyCKEZZq-rfXHLIlSi)
 
 ## Recipe-Page
 
-![Recipe-Page large-screen](https://drive.google.com/file/d/1438_Sj4j8gKlFOAJ_deXV7Qu_20UfsYM/view?usp=sharing)
-![Recipe-Page medium-screen](https://drive.google.com/file/d/1NZQwUilNMa-Wozy7MD1FhE7ZhUcXyK3w/view?usp=sharing)
-![Recipe-Page small-screen](https://drive.google.com/file/d/1TUA-oxVvKVLcEK6avdHvhgxHp9zGh92x/view?usp=sharing)
+![Recipe-Page large-screen](https://drive.google.com/uc?export=view&id=1438_Sj4j8gKlFOAJ_deXV7Qu_20UfsYM)
+![Recipe-Page medium-screen](https://drive.google.com/uc?export=view&id=1NZQwUilNMa-Wozy7MD1FhE7ZhUcXyK3w)
+![Recipe-Page small-screen](https://drive.google.com/uc?export=view&id=1TUA-oxVvKVLcEK6avdHvhgxHp9zGh92x)
