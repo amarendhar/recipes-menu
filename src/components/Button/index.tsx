@@ -48,7 +48,8 @@ const ButtonContainer = styled.button<{ $variant: string; $disabled: boolean }>`
   color: ${({ theme }) => theme.palette.primary.contrastText};
   box-shadow: ${({ theme }) => theme.shadows[2]};
   font-size: ${({ $variant }) => ($variant === "sm" ? "14px" : "16px")};
-  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: background-color 0.2s
+    ${({ theme }) => theme.transitions.easing.easeInOut} 0ms;
   cursor: pointer;
 
   &:hover {

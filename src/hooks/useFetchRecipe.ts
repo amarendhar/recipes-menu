@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useContentful } from "api";
 import { Maybe, RecipeEntry } from "types";
-import mockRecipe from "mocks/__fixtures__/mockRecipe.json";
 
 type UseFetchRecipeProps = {
   data: Maybe<RecipeEntry>;
@@ -27,7 +26,6 @@ export const useFetchRecipe = (recipeId?: string): UseFetchRecipeProps => {
 
         const data = await contentfulClient.getEntry(recipeId);
         setData(data);
-        // setData(mockRecipe as RecipeEntry);
         setLoading(false);
       } catch (error) {
         console.error("Error in fetching recipe -> ", error);

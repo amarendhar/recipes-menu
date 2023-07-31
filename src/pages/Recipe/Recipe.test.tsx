@@ -1,4 +1,4 @@
-import { render, screen, within, waitFor } from "utils/test-utils";
+import { act, render, screen, within, waitFor } from "utils/test-utils";
 import { render as rtlRender } from "@testing-library/react";
 import { compiler } from "markdown-to-jsx";
 import { Recipe } from ".";
@@ -56,5 +56,26 @@ describe("# Recipe", () => {
     );
 
     expect(container).toMatchSnapshot();
+  });
+
+  it("Should update rating, when rating is changed", async () => {
+    const recipe = prepareRecipe(mockRecipes.items[1] as RecipeEntry);
+    renderComponent({
+      route: `/recipe/${recipe?.id}`,
+    });
+
+    await waitFor(() => {
+      screen.getByTestId("recipe-content");
+    });
+    expect((screen.getByTestId("rating") as HTMLInputElement).value).toEqual(
+      "0"
+    );
+
+    act(() => {
+      screen.getByTestId("rating-3").click();
+    });
+    expect((screen.getByTestId("rating") as HTMLInputElement).value).toEqual(
+      "3"
+    );
   });
 });

@@ -13,6 +13,7 @@ describe("# prepareRecipe", () => {
       tags: expect.any(Array<String>),
       description: expect.any(String),
       chef: expect.any(String),
+      rating: expect.any(Number),
     });
 
     expect(recipe).toMatchSnapshot();

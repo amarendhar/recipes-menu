@@ -8,7 +8,9 @@ describe("# RecipeItem", () => {
   const recipes = prepareRecipes(mockRecipes as RecipesEntry);
 
   const renderComponent = (recipe: RecipesItemData) =>
-    render(<RecipeItem recipe={recipe} />, { route: null });
+    render(<RecipeItem recipe={recipe} handleAddRating={() => {}} />, {
+      route: null,
+    });
 
   it("Should render recipe-item with recipe image and title", async () => {
     const recipe = recipes[0];

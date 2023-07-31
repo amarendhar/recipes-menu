@@ -11,6 +11,7 @@ describe("# prepareRepository", () => {
         id: expect.any(String),
         title: expect.any(String),
         image: expect.any(String),
+        rating: expect.any(Number),
       });
     });
 

@@ -17,6 +17,10 @@ export type RecipeData = {
   tags: string[];
   description: string;
   chef: string;
+  rating: number;
 };
 
-export type RecipesItemData = Pick<RecipeData, "id" | "title" | "image">;
+export type RecipesItemData = Pick<
+  RecipeData,
+  "id" | "title" | "image" | "rating"
+>;

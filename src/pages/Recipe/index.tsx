@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import { Error, Loading, Markdown } from "components";
+import styled, { css } from "styled-components";
+import { Error, Rating, Loading, Markdown } from "components";
 import { useRecipe } from "./useRecipe";
 
 export const Recipe = () => {
-  const { recipe, error, loading } = useRecipe();
+  const { recipe, error, loading, handleAddRating } = useRecipe();
 
   if (loading) {
     return <Loading data-testid="recipe-loading" />;
@@ -29,6 +29,10 @@ export const Recipe = () => {
             <Description data-testid="recipe-description">
               <Markdown>{recipe.description}</Markdown>
             </Description>
+            <RatingContainer>
+              <Label>Tags:</Label>
+              <Rating value={recipe.rating} onChange={handleAddRating} />
+            </RatingContainer>
             {recipe.tags.length > 0 && (
               <TagsContainer data-testid="recipe-tags-container">
                 <Label>Tags:</Label>
@@ -132,11 +136,19 @@ const Label = styled.span`
   font-weight: ${({ theme }) => theme.typography.fontWeightBold};
 `;
 
-const TagsContainer = styled.div`
+const LabelContainer = css`
   display: flex;
   align-items: center;
   grid-gap: ${({ theme }) => theme.spacing(3)};
   padding-top: ${({ theme }) => theme.spacing(7)};
+`;
+
+const RatingContainer = styled.div`
+  ${LabelContainer};
+`;
+
+const TagsContainer = styled.div`
+  ${LabelContainer};
 `;
 
 const Tags = styled.div`
@@ -154,10 +166,7 @@ const Tags = styled.div`
 `;
 
 const Chef = styled.div`
-  display: flex;
-  align-items: center;
-  grid-gap: ${({ theme }) => theme.spacing(3)};
-  padding-top: ${({ theme }) => theme.spacing(7)};
+  ${LabelContainer};
 `;
 
 const NoResults = styled.h1`

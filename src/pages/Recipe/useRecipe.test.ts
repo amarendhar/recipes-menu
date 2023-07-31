@@ -1,4 +1,4 @@
-import { waitFor, renderHook } from "utils/test-utils";
+import { act, waitFor, renderHook } from "utils/test-utils";
 import { useRecipe } from "./useRecipe";
 import * as prepareRecipeUtils from "./utils/prepareRecipe";
 import { prepareRecipe } from "./utils";
@@ -10,6 +10,7 @@ describe("# useRecipe", () => {
     recipe: null,
     error: "",
     loading: false,
+    handleAddRating: expect.any(Function),
   };
 
   it("Should return loading state true, when fetching recipe", async () => {
@@ -48,5 +49,20 @@ describe("# useRecipe", () => {
     await waitFor(() => expect(result.current.loading).toEqual(false));
 
     expect(prepareRecipeSpy).toHaveBeenCalledWith(mockRecipes.items[2]);
+  });
+
+  it("Should update rating, when rating is changed", async () => {
+    const recipe = prepareRecipe(mockRecipes.items[1] as RecipeEntry);
+    const { result } = renderHook(() => useRecipe(), {
+      route: `/recipe/${recipe?.id}`,
+    });
+
+    await waitFor(() => expect(result.current.loading).toEqual(false));
+    expect(result.current.recipe.rating).toEqual(0);
+
+    act(() => {
+      result.current.handleAddRating(4);
+    });
+    expect(result.current.recipe.rating).toEqual(4);
   });
 });

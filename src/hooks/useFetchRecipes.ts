@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from "react";
 import { useContentful } from "api";
 import { RECIPES_LIMIT, CONTENTFUL_CONTENT_TYPE } from "globalConstants";
 import { Maybe, RecipesEntry } from "types";
-import mockRecipes from "mocks/__fixtures__/mockRecipes.json";
 
 export type UseFetchRecipesProps = {
   data: Maybe<RecipesEntry>;
@@ -12,7 +11,7 @@ export type UseFetchRecipesProps = {
   loadMore: () => void;
 };
 
-export const useFetchRecipes = (limit?: number): UseFetchRecipesProps => {
+export const useFetchRecipes = (): UseFetchRecipesProps => {
   const contentfulClient = useContentful();
   const [data, setData] = useState<Maybe<RecipesEntry>>(null);
   const [error, setError] = useState("");
@@ -32,17 +31,6 @@ export const useFetchRecipes = (limit?: number): UseFetchRecipesProps => {
         });
 
         setData(data);
-        // setData({
-        //   ...(mockRecipes as RecipesEntry),
-        //   // @ts-ignore
-        //   items: mockRecipes.items.map((mockRecipe) => ({
-        //     ...mockRecipe,
-        //     sys: {
-        //       ...mockRecipe.sys,
-        //       id: mockRecipe.sys.id + cursor,
-        //     },
-        //   })),
-        // });
         setLoading(false);
       } catch (error) {
         console.error("Error in fetching recipes -> ", error);

@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`# Rating Should update rating, when rating is changed 1`] = `
+<div>
+  <div
+    class="sc-jqUWZQ kSNpbf"
+    data-testid="rating-container"
+  >
+    <button
+      class="sc-kDDqET fgsgTg"
+      data-testid="rating-1"
+    >
+      <svg
+        height="24"
+        style="color: rgb(250, 175, 0);"
+        viewBox="0 0 24 24"
+        width="24"
+      >
+        <path
+          d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+        />
+      </svg>
+    </button>
+    <button
+      class="sc-kDDqET fgsgTg"
+      data-testid="rating-2"
+    >
+      <svg
+        height="24"
+        style="color: rgb(250, 175, 0);"
+        viewBox="0 0 24 24"
+        width="24"
+      >
+        <path
+          d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+        />
+      </svg>
+    </button>
+    <button
+      class="sc-kDDqET fgsgTg"
+      data-testid="rating-3"
+    >
+      <svg
+        height="24"
+        style="color: rgb(250, 175, 0);"
+        viewBox="0 0 24 24"
+        width="24"
+      >
+        <path
+          d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+        />
+      </svg>
+    </button>
+    <button
+      class="sc-kDDqET fgsgTg"
+      data-testid="rating-4"
+    >
+      <svg
+        height="24"
+        style="color: rgba(0, 0, 0, 0.26);"
+        viewBox="0 0 24 24"
+        width="24"
+      >
+        <path
+          d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+        />
+      </svg>
+    </button>
+    <button
+      class="sc-kDDqET fgsgTg"
+      data-testid="rating-5"
+    >
+      <svg
+        height="24"
+        style="color: rgba(0, 0, 0, 0.26);"
+        viewBox="0 0 24 24"
+        width="24"
+      >
+        <path
+          d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+        />
+      </svg>
+    </button>
+    <input
+      class="sc-iqcnOu ZBJeF"
+      data-testid="rating"
+      name="rating"
+      type="radio"
+      value="3"
+    />
+  </div>
+</div>
+`;

@@ -1,12 +1,23 @@
+import { useCallback } from "react";
 import { NavLink } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
+import { Rating } from "components";
+import { UseRecipesProps } from "./useRecipes";
 import { RecipesItemData } from "types";
 
 type RecipeItemProps = {
   recipe: RecipesItemData;
+  handleAddRating: UseRecipesProps["handleAddRating"];
 };
 
-export const RecipeItem = ({ recipe }: RecipeItemProps) => {
+export const RecipeItem = ({ recipe, handleAddRating }: RecipeItemProps) => {
+  const onChangeRating = useCallback(
+    (rating: number) => {
+      handleAddRating({ recipeId: recipe.id, rating });
+    },
+    [handleAddRating, recipe.id]
+  );
+
   return (
     <NavLink data-testid="recipe-item" to={`/recipe/${recipe.id}`}>
       <RecipeItemContainer>
@@ -19,6 +30,7 @@ export const RecipeItem = ({ recipe }: RecipeItemProps) => {
         </RecipeImage>
         <RecipeDetails>
           <RecipeName data-testid="recipe-name">{recipe.title}</RecipeName>
+          <Rating value={recipe.rating} onChange={onChangeRating} />
         </RecipeDetails>
       </RecipeItemContainer>
     </NavLink>
@@ -65,6 +77,9 @@ const RecipeImage = styled.div`
 `;
 
 const RecipeDetails = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   min-height: 100px;
   padding: ${({ theme }) => theme.spacing(3)};
 `;

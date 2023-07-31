@@ -23,11 +23,13 @@ export const prepareRecipes = (
       const id: string = recipe.sys.id;
       const title = fields?.title || "";
       const image = (fields?.photo?.fields?.file?.url || "") as string;
+      const rating = 0;
 
       const recipeData: RecipesItemData = {
         id,
         title,
         image,
+        rating,
       };
 
       return recipeData;

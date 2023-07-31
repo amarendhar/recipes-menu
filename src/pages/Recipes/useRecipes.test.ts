@@ -12,6 +12,7 @@ describe("# useRecipes", () => {
     error: "",
     loading: false,
     loadMore: expect.any(Function),
+    handleAddRating: expect.any(Function),
   };
 
   const recipes = prepareRecipes(mockRecipes as RecipesEntry);
@@ -73,4 +74,20 @@ describe("# useRecipes", () => {
       expect(result.current.recipes).toEqual(recipes.slice(0, 4));
     });
   });
+
+  it("Should update rating of a recipe, when rating is changed", async () => {
+    const { result } = renderHook(() => useRecipes());
+
+    await waitFor(() => expect(result.current.loading).toEqual(false));
+    expect(result.current.recipes[0].rating).toEqual(0);
+
+    act(() => {
+      result.current.handleAddRating({
+        recipeId: result.current.recipes[0].id,
+        rating: 4,
+      });
+    });
+    expect(result.current.recipes[0].rating).toEqual(4);
+  });
+
 });

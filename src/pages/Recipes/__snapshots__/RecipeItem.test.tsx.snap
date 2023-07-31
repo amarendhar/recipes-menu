@@ -8,10 +8,10 @@ exports[`# RecipeItem Should render recipe-item with recipe image and title 1`] 
     href="/recipe/4dT8tcb6ukGSIg2YyuGEOm"
   >
     <div
-      class="sc-dIowON dnuTcK"
+      class="sc-fLljvp drMhkk"
     >
       <div
-        class="sc-hHLcUO gTprxP"
+        class="sc-bBrFuS MUIGI"
       >
         <img
           alt="White Cheddar Grilled Cheese with Cherry Preserves & Basil"
@@ -20,13 +20,100 @@ exports[`# RecipeItem Should render recipe-item with recipe image and title 1`] 
         />
       </div>
       <div
-        class="sc-dmRblv gzITwX"
+        class="sc-ivTnkv cKcKeu"
       >
         <div
-          class="sc-kgfleI gqAAJn"
+          class="sc-cxaavb gRHQQK"
           data-testid="recipe-name"
         >
           White Cheddar Grilled Cheese with Cherry Preserves & Basil
+        </div>
+        <div
+          class="sc-jqUWZQ kSNpbf"
+          data-testid="rating-container"
+        >
+          <button
+            class="sc-kDDqET fgsgTg"
+            data-testid="rating-1"
+          >
+            <svg
+              height="24"
+              style="color: rgba(0, 0, 0, 0.26);"
+              viewBox="0 0 24 24"
+              width="24"
+            >
+              <path
+                d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+          </button>
+          <button
+            class="sc-kDDqET fgsgTg"
+            data-testid="rating-2"
+          >
+            <svg
+              height="24"
+              style="color: rgba(0, 0, 0, 0.26);"
+              viewBox="0 0 24 24"
+              width="24"
+            >
+              <path
+                d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+          </button>
+          <button
+            class="sc-kDDqET fgsgTg"
+            data-testid="rating-3"
+          >
+            <svg
+              height="24"
+              style="color: rgba(0, 0, 0, 0.26);"
+              viewBox="0 0 24 24"
+              width="24"
+            >
+              <path
+                d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+          </button>
+          <button
+            class="sc-kDDqET fgsgTg"
+            data-testid="rating-4"
+          >
+            <svg
+              height="24"
+              style="color: rgba(0, 0, 0, 0.26);"
+              viewBox="0 0 24 24"
+              width="24"
+            >
+              <path
+                d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+          </button>
+          <button
+            class="sc-kDDqET fgsgTg"
+            data-testid="rating-5"
+          >
+            <svg
+              height="24"
+              style="color: rgba(0, 0, 0, 0.26);"
+              viewBox="0 0 24 24"
+              width="24"
+            >
+              <path
+                d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+          </button>
+          <input
+            class="sc-iqcnOu ZBJeF"
+            data-testid="rating"
+            name="rating"
+            type="radio"
+            value="0"
+          />
         </div>
       </div>
     </div>

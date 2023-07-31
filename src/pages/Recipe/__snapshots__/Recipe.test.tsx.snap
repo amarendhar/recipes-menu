@@ -22,15 +22,15 @@ exports[`# Recipe Should fetch and render recipe with details image, title, desc
     class="sc-hKMtDE keuPlN"
   >
     <div
-      class="sc-kDDqET cFtpDF"
+      class="sc-ewahw juHGKe"
       data-testid="recipe-container"
     >
       <div
-        class="sc-iqcnOu gWJjuX"
+        class="sc-bretMz biXBIq"
         data-testid="recipe-content"
       >
         <div
-          class="sc-crXcXV imUHhX"
+          class="sc-ksZauW Nfqru"
         >
           <img
             alt="Crispy Chicken and Rice	with Peas & Arugula Salad"
@@ -39,16 +39,16 @@ exports[`# Recipe Should fetch and render recipe with details image, title, desc
           />
         </div>
         <div
-          class="sc-ewahw goharH"
+          class="sc-hAZoWV bPlLPa"
         >
           <h1
-            class="sc-bretMz iVBnMd"
+            class="sc-fnymgw ggWEfn"
             data-testid="recipe-title"
           >
             Crispy Chicken and Rice	with Peas & Arugula Salad
           </h1>
           <div
-            class="sc-ksZauW cxLiLA"
+            class="sc-fEOqom bpDBlu"
             data-testid="recipe-description"
           >
             <span
@@ -59,16 +59,112 @@ exports[`# Recipe Should fetch and render recipe with details image, title, desc
             </span>
           </div>
           <div
-            class="sc-fnymgw eIpLnC"
-            data-testid="recipe-tags-container"
+            class="sc-idiyyg iUDwXW"
           >
             <span
-              class="sc-hAZoWV iCFmIw"
+              class="sc-bjUoET dxlYDC"
             >
               Tags:
             </span>
             <div
-              class="sc-fEOqom jFifry"
+              class="sc-jqUWZQ kSNpbf"
+              data-testid="rating-container"
+            >
+              <button
+                class="sc-kDDqET fgsgTg"
+                data-testid="rating-1"
+              >
+                <svg
+                  height="24"
+                  style="color: rgba(0, 0, 0, 0.26);"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                  />
+                </svg>
+              </button>
+              <button
+                class="sc-kDDqET fgsgTg"
+                data-testid="rating-2"
+              >
+                <svg
+                  height="24"
+                  style="color: rgba(0, 0, 0, 0.26);"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                  />
+                </svg>
+              </button>
+              <button
+                class="sc-kDDqET fgsgTg"
+                data-testid="rating-3"
+              >
+                <svg
+                  height="24"
+                  style="color: rgba(0, 0, 0, 0.26);"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                  />
+                </svg>
+              </button>
+              <button
+                class="sc-kDDqET fgsgTg"
+                data-testid="rating-4"
+              >
+                <svg
+                  height="24"
+                  style="color: rgba(0, 0, 0, 0.26);"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                  />
+                </svg>
+              </button>
+              <button
+                class="sc-kDDqET fgsgTg"
+                data-testid="rating-5"
+              >
+                <svg
+                  height="24"
+                  style="color: rgba(0, 0, 0, 0.26);"
+                  viewBox="0 0 24 24"
+                  width="24"
+                >
+                  <path
+                    d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                  />
+                </svg>
+              </button>
+              <input
+                class="sc-iqcnOu ZBJeF"
+                data-testid="rating"
+                name="rating"
+                type="radio"
+                value="0"
+              />
+            </div>
+          </div>
+          <div
+            class="sc-dIowON foa-dbp"
+            data-testid="recipe-tags-container"
+          >
+            <span
+              class="sc-bjUoET dxlYDC"
+            >
+              Tags:
+            </span>
+            <div
+              class="sc-hHLcUO ibRqdA"
               data-testid="recipe-tags"
             >
               <div
@@ -84,11 +180,11 @@ exports[`# Recipe Should fetch and render recipe with details image, title, desc
             </div>
           </div>
           <div
-            class="sc-bjUoET bmjKUN"
+            class="sc-dmRblv JPCsC"
             data-testid="recipe-chef"
           >
             <span
-              class="sc-hAZoWV iCFmIw"
+              class="sc-bjUoET dxlYDC"
             >
               Chef:
             </span>

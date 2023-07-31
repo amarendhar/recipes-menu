@@ -23,6 +23,7 @@ export const prepareRecipe = (data: Maybe<RecipeEntry>): Maybe<RecipeData> => {
     fields?.tags?.map((tag) => (tag?.fields?.name as string) || "") || [];
   const description = fields?.description || "";
   const chef = (fields?.chef?.fields?.name || "") as string;
+  const rating = 0;
 
   const recipeData: RecipeData = {
     id,
@@ -31,6 +32,7 @@ export const prepareRecipe = (data: Maybe<RecipeEntry>): Maybe<RecipeData> => {
     tags,
     description,
     chef,
+    rating,
   };
 
   return recipeData;

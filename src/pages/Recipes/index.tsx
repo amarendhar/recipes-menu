@@ -6,7 +6,7 @@ import { RecipeItem } from "./RecipeItem";
 import { useOnscroll } from "hooks";
 
 export const Recipes = () => {
-  const { recipes, error, loading, loadMore } = useRecipes();
+  const { recipes, error, loading, loadMore, handleAddRating } = useRecipes();
   const recipesListRef = useRef<HTMLDivElement | null>(null);
 
   useOnscroll(() => {
@@ -36,7 +36,7 @@ export const Recipes = () => {
       {recipes.length > 0 ? (
         <RecipesList data-testid="recipes-list" ref={recipesListRef}>
           {recipes.map((recipe) => (
-            <RecipeItem key={recipe.id} recipe={recipe} />
+            <RecipeItem key={recipe.id} recipe={recipe} handleAddRating={handleAddRating} />
           ))}
         </RecipesList>
       ) : (

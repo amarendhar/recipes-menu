@@ -40,7 +40,13 @@ describe("# Recipes", () => {
     recipes.forEach((recipe, key) => {
       const recipeItem = recipesList[key];
 
-      expect(RecipeItemSpy).toHaveBeenCalledWith({ recipe }, {});
+      expect(RecipeItemSpy).toHaveBeenCalledWith(
+        {
+          recipe,
+          handleAddRating: expect.any(Function),
+        },
+        {}
+      );
       expect(recipeItem.getAttribute("href")).toEqual(`/recipe/${recipe.id}`);
 
       expect(
@@ -71,5 +77,25 @@ describe("# Recipes", () => {
     });
 
     expect(window.location.pathname).toEqual(`/recipe/${recipes[0].id}`);
+  });
+
+  it("Should update rating of a recipe, when rating is changed", async () => {
+    renderComponent();
+
+    await waitFor(() => {
+      screen.getByTestId("recipes-list");
+    });
+
+    const recipeItem = screen.queryAllByTestId("recipe-item")[0];
+    expect(
+      (within(recipeItem).getByTestId("rating") as HTMLInputElement).value
+    ).toEqual("0");
+
+    act(() => {
+      within(recipeItem).getByTestId("rating-3").click();
+    });
+    expect(
+      (within(recipeItem).getByTestId("rating") as HTMLInputElement).value
+    ).toEqual("3");
   });
 });
