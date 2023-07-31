@@ -30,7 +30,7 @@ export const Recipe = () => {
               <Markdown>{recipe.description}</Markdown>
             </Description>
             <RatingContainer>
-              <Label>Tags:</Label>
+              <Label>Rating:</Label>
               <Rating value={recipe.rating} onChange={handleAddRating} />
             </RatingContainer>
             {recipe.tags.length > 0 && (
@@ -126,6 +126,14 @@ const Title = styled.h1`
   text-align: center;
   padding: ${({ theme }) => theme.spacing(5)} 0;
   font-weight: ${({ theme }) => theme.typography.fontWeightLight};
+
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    font-size: 24px;
+  }
+
+  ${({ theme }) => theme.breakpoints.down("xs")} {
+    font-size: 20px;
+  }
 `;
 
 const Description = styled.div`

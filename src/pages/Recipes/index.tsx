@@ -78,6 +78,14 @@ const Title = styled.h1`
   text-align: center;
   padding: ${({ theme }) => theme.spacing(5)} 0;
   font-weight: ${({ theme }) => theme.typography.fontWeightLight};
+
+  ${({ theme }) => theme.breakpoints.down("sm")} {
+    font-size: 24px;
+  }
+
+  ${({ theme }) => theme.breakpoints.down("xs")} {
+    font-size: 20px;
+  }
 `;
 
 const RecipesList = styled.div`
