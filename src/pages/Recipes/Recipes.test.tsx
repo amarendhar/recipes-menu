@@ -1,15 +1,11 @@
-import {
-  act,
-  render,
-  screen,
-  within,
-  waitFor,
-  fireEvent,
-} from "utils/test-utils";
+import { act, render, screen, within, waitFor } from "utils/test-utils";
+import { render as rtlRender } from "@testing-library/react";
+import { compiler } from "markdown-to-jsx";
 import { Recipes } from ".";
 import * as RecipeItem from "./RecipeItem";
 import { prepareRecipes } from "./utils";
-import { RecipesEntry } from "types";
+import { prepareRecipe } from "pages/Recipe/utils";
+import { RecipeEntry, RecipesEntry } from "types";
 import mockRecipes from "mocks/__fixtures__/mockRecipes.json";
 
 describe("# Recipes", () => {
@@ -61,24 +57,6 @@ describe("# Recipes", () => {
     });
   });
 
-  it("Should navigate to selected recipe-page", async () => {
-    renderComponent();
-
-    expect(window.location.pathname).toEqual("/");
-
-    await waitFor(() => {
-      screen.getByTestId("recipes-list");
-    });
-
-    const recipesList = screen.queryAllByTestId("recipe-item");
-
-    act(() => {
-      recipesList[0].click();
-    });
-
-    expect(window.location.pathname).toEqual(`/recipe/${recipes[0].id}`);
-  });
-
   it("Should update rating of a recipe, when rating is changed", async () => {
     renderComponent();
 
@@ -97,5 +75,57 @@ describe("# Recipes", () => {
     expect(
       (within(recipeItem).getByTestId("rating") as HTMLInputElement).value
     ).toEqual("3");
+  });
+
+  it("Should navigate to selected recipe-page", async () => {
+    renderComponent();
+
+    expect(window.location.pathname).toEqual("/");
+
+    await waitFor(() => {
+      screen.getByTestId("recipes-list");
+    });
+
+    const recipesList = screen.queryAllByTestId("recipe-item");
+
+    act(() => {
+      recipesList[3].click();
+    });
+
+    expect(window.location.pathname).toEqual(`/recipe/${recipes[3].id}`);
+
+    // Navigate to selected recipe-page
+    screen.getByTestId("recipe-loading");
+
+    const recipe = prepareRecipe(mockRecipes.items[3] as RecipeEntry);
+    await waitFor(() => {
+      screen.getByTestId("recipe-container");
+    });
+
+    expect(
+      (screen.getByTestId("recipe-image") as HTMLImageElement).src
+    ).toContain(recipe?.image);
+    expect(
+      (screen.getByTestId("recipe-image") as HTMLImageElement).alt
+    ).toEqual(recipe?.title);
+    expect(screen.getByTestId("recipe-title").textContent).toEqual(
+      recipe?.title
+    );
+    expect(screen.getByTestId("recipe-description").textContent).toEqual(
+      rtlRender(compiler(recipe?.description as string)).container.textContent
+    );
+
+    const recipeTagsContainer = screen.getByTestId("recipe-tags-container");
+    within(recipeTagsContainer).getByText("Tags:");
+
+    const recipeTags = screen.getAllByTestId("recipe-tag");
+    recipe?.tags?.forEach((tagName, key) => {
+      const recipeTag = recipeTags[key];
+      expect(recipeTag.textContent).toEqual(tagName);
+    });
+
+    expect(screen.getByTestId("recipe-chef").textContent).toEqual(
+      `Chef:${recipe?.chef}`
+    );
   });
 });
