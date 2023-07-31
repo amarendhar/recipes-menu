@@ -15,18 +15,10 @@ This is a sample web application that uses the [Contentful Delivery API](https:/
 ## Setup Development
 
 - Clone this repository into your system.
-- Create a `.env` file in the root directory with the following content:
-
-```bash
-REACT_APP_CONTENTFUL_BASE_URL = "https://cdn.contentful.com"
-REACT_APP_CONTENTFUL_SPACE_ID = <replace_with_actual_spaceID>
-REACT_APP_CONTENTFUL_ENVIRONMENT_ID = master
-REACT_APP_CONTENTFUL_ACCESS_TOKEN = <replace_with_actual_accessToken>
-```
-
-- Replace `<replace_with_actual_spaceID>` with your **Contentful Space ID**.
-- Replace `<replace_with_actual_accessToken>` with your **Contentful Access Token**.
-- `REACT_APP_CONTENTFUL_ENVIRONMENT_ID` is optional it can be included/removed from the `.env` file.
+- Create a `.env` file in the root directory with the help of `.env.example`.
+  - Replace `<replace_with_actual_spaceID>` with your **Contentful Space ID**.
+  - Replace `<replace_with_actual_accessToken>` with your **Contentful Access Token**.
+  - `REACT_APP_CONTENTFUL_ENVIRONMENT_ID` is optional it can be included/removed from the `.env` file.
 - Make sure you have **Node.js** and **npm** installed on your machine.
 - Install the required dependencies:
 
@@ -158,3 +150,17 @@ The detailed view displays all the data for a selected recipe, including the tit
 - The application is implemented with production readiness in mind but is not deployed.
 - Due to time constraints, some shortcuts were taken in error handling and handling unresolved entries from the API.
 - `src/globalConstants` is responsible for fetching all the tokens from the `.evn` file to be accessed by contentful-client.
+
+### Screenshots
+
+## Recipes-Page
+
+![Recipes-Page large-screen](https://drive.google.com/file/d/1hz8u8D_C74nnkcFqvQfy72XLRQzP39J_/view?usp=sharing)
+![Recipes-Page medium-screen](https://drive.google.com/file/d/12BXKIwlS3qkqHCoZhCEUpk2qLF2Yprpy/view?usp=sharing)
+![Recipes-Page small-screen](https://drive.google.com/file/d/1DItlRSmPlKM8rdXyCKEZZq-rfXHLIlSi/view?usp=sharing)
+
+## Recipe-Page
+
+![Recipe-Page large-screen](https://drive.google.com/file/d/1438_Sj4j8gKlFOAJ_deXV7Qu_20UfsYM/view?usp=sharing)
+![Recipe-Page medium-screen](https://drive.google.com/file/d/1NZQwUilNMa-Wozy7MD1FhE7ZhUcXyK3w/view?usp=sharing)
+![Recipe-Page small-screen](https://drive.google.com/file/d/1TUA-oxVvKVLcEK6avdHvhgxHp9zGh92x/view?usp=sharing)

@@ -14,6 +14,15 @@ type ContentfulContextValue = ContentfulClientApi<undefined>;
 
 const ContentfulContext = createContext<ContentfulContextValue | null>(null);
 
+if (!CONTENTFUL_SPACE_ID || !CONTENTFUL_ACCESS_TOKEN) {
+  const error =
+    "CONTENTFUL_SPACE_ID & CONTENTFUL_ACCESS_TOKEN are required to create Contentful client";
+  console.error(
+    "CONTENTFUL_SPACE_ID & CONTENTFUL_ACCESS_TOKEN are required to create Contentful client"
+  );
+  throw new Error(error);
+}
+
 const clientParams: CreateClientParams = {
   space: CONTENTFUL_SPACE_ID,
   accessToken: CONTENTFUL_ACCESS_TOKEN,
