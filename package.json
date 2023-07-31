@@ -5,6 +5,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "serve": "serve build",
     "test": "react-scripts test",
     "type-check": "tsc --noEmit",
     "eject": "react-scripts eject"
@@ -46,6 +47,7 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "msw": "^1.2.3"
+    "msw": "^1.2.3",
+    "serve": "^14.2.0"
   }
 }
