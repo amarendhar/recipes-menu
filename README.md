@@ -15,7 +15,7 @@ This is a sample web application that uses the [Contentful Delivery API](https:/
 ## Setup Development
 
 - Clone this repository into your system.
-- Create a `.env` file in the root directory with the help of `.env.example`.
+- Please refer `.env.example` from the root directory to create a `.env` file.
   - Replace `<replace_with_actual_spaceID>` with your **Contentful Space ID**.
   - Replace `<replace_with_actual_accessToken>` with your **Contentful Access Token**.
   - `REACT_APP_CONTENTFUL_ENVIRONMENT_ID` is optional it can be included/removed from the `.env` file.
