@@ -22,7 +22,7 @@ export const Recipes = () => {
     }
   });
 
-  if (loading) {
+  if (loading && !recipes.length) {
     return <Loading data-testid="recipes-loading" />;
   }
 
@@ -36,13 +36,20 @@ export const Recipes = () => {
       {recipes.length > 0 ? (
         <RecipesList data-testid="recipes-list" ref={recipesListRef}>
           {recipes.map((recipe) => (
-            <RecipeItem key={recipe.id} recipe={recipe} handleAddRating={handleAddRating} />
+            <RecipeItem
+              key={recipe.id}
+              recipe={recipe}
+              handleAddRating={handleAddRating}
+            />
           ))}
         </RecipesList>
       ) : (
         <NoResults data-testid="recipes-not-found">
           No recipes available at the moment, please try again later
         </NoResults>
+      )}
+      {loading && recipes.length > 0 && (
+        <Loading data-testid="recipes-loading" />
       )}
     </RecipesContainer>
   );
