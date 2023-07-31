@@ -14,10 +14,17 @@ This is a sample web application that uses the [Contentful Delivery API](https:/
 
 ## Setup Development
 
-- Clone this repository into your system.
-- Please refer `.env.example` from the root directory to create a `.env` file.
-  - Replace `<replace_with_actual_spaceID>` with your **Contentful Space ID**.
-  - Replace `<replace_with_actual_accessToken>` with your **Contentful Access Token**.
+- Clone this repository to your local machine:
+- Change into the project directory:
+```bash
+cd recipes-menu
+```
+- Create a `.env` file in the project root directly and copy the content from `env.example` or run the below script, it'll generate `.env` from `.env-example`
+```bash
+./setup-env.sh
+```
+  - Replace `<replace_with_actual_spaceID>` with your **Contentful Space ID** in `.env`.
+  - Replace `<replace_with_actual_accessToken>` with your **Contentful Access Token** in `.env`.
   - `REACT_APP_CONTENTFUL_ENVIRONMENT_ID` is optional it can be included/removed from the `.env` file.
 - Make sure you have **Node.js** and **npm** installed on your machine.
 - Install the required dependencies:
