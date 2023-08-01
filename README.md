@@ -16,16 +16,20 @@ This is a sample web application that uses the [Contentful Delivery API](https:/
 
 - Clone this repository to your local machine:
 - Change into the project directory:
+
 ```bash
 cd recipes-menu
 ```
+
 - Create a `.env` file in the project root directly and copy the content from `env.example` or run the below script, it'll generate `.env` from `.env-example`
+
 ```bash
 ./setup-env.sh
 ```
-  - Replace `<replace_with_actual_spaceID>` with your **Contentful Space ID** in `.env`.
-  - Replace `<replace_with_actual_accessToken>` with your **Contentful Access Token** in `.env`.
-  - `REACT_APP_CONTENTFUL_ENVIRONMENT_ID` is optional it can be included/removed from the `.env` file.
+
+- Replace `<replace_with_actual_spaceID>` with your **Contentful Space ID** in `.env`.
+- Replace `<replace_with_actual_accessToken>` with your **Contentful Access Token** in `.env`.
+- `REACT_APP_CONTENTFUL_ENVIRONMENT_ID` is optional it can be included/removed from the `.env` file.
 - Make sure you have **Node.js** and **npm** installed on your machine.
 - Install the required dependencies:
 
@@ -151,6 +155,10 @@ The detailed view displays all the data for a selected recipe, including the tit
   - Created `test-utils` to handle all the test-cases with routing and contextProvider options.
 - [msw (mock-service-worker)](https://mswjs.io/docs/getting-started/mocks/rest-api) for mocking APIs.
   - The mock-server, mock-API-handlers, and mock-fixtures are available in `src/mocks` folder
+
+### Screenshots
+
+- [Recipes-Page and Recipe-Page with different screen sizes](https://drive.google.com/drive/folders/18qH3OQVNjWpGaua3LAo1iMzlTrPLIIdw?usp=sharing)
 
 ### Notes
 
